@@ -16,14 +16,17 @@ public class MainScreen {
 
     private GridPane grid;
 
-    MainScreen() {
+    public MainScreen() {
         grid = new GridPane();
     }
 
     public void create() {
         var table = new TableView<String>();
+        table.setMinWidth(450);
         table.setEditable(false);
         table.getColumns().addAll(getTableColumns("№ Part", "What's happened", "Spent time"));
+
+        grid.add(table, 0, 0);
     }
 
     private List<TableColumn<String, String>> getTableColumns(String... columnsNames) {
